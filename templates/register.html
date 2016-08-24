@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Registration page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Please enter your details below</h1>
+      <br>
+      <form action="" method="post">
+        <input type="text" placeholder="Username" name="username" value="{{request.form.username }}" required>
+        <input type="password" placeholder="Password" name="password" value="{{request.form.password }}" required>
+		<input type="email" placeholder="Email" name="email" value="{{request.form.email }}" required>
+		<select name="type">
+		  <option value="admin">Admin</option>
+		  <option value="user">User</option>
+		</select> 
+        <input class="btn btn-default" type="submit" value="Register">
+      </form>
+	  {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
+</html>
+
